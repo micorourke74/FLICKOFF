@@ -1,0 +1,16 @@
+name: Repository sanity
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  sanity:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Run repository sanity checks
+        shell: pwsh
+        run: ./tools/powershell/Test-RepositorySanity.ps1
