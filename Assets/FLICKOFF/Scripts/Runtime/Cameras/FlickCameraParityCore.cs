@@ -61,7 +61,7 @@ namespace FlickOff
         public static Vector3 HeadingToForward(float headingDegrees)
         {
             float radians = headingDegrees * Mathf.Deg2Rad;
-            return new Vector3(-Mathf.Sin(radians), Mathf.Cos(radians), 0f);
+            return new Vector3(-Mathf.Sin(radians), 0f, Mathf.Cos(radians));
         }
     }
 
@@ -191,7 +191,7 @@ namespace FlickOff
             }
 
             Vector3 offset = targetPosition - camera.Position;
-            float distanceSquared = offset.x * offset.x + offset.y * offset.y;
+            float distanceSquared = offset.x * offset.x + offset.z * offset.z;
             bool inRange = distanceSquared <= _tuning.RangeMeters * _tuning.RangeMeters;
             if (!inRange)
             {
@@ -206,7 +206,7 @@ namespace FlickOff
             else
             {
                 float distance = Mathf.Sqrt(distanceSquared);
-                Vector3 direction = new Vector3(offset.x / distance, offset.y / distance, 0f);
+                Vector3 direction = new Vector3(offset.x / distance, 0f, offset.z / distance);
                 Vector3 forward = FlickCameraMath.HeadingToForward(camera.HeadingDegrees);
                 float minimumVisibleDot = Mathf.Cos(_tuning.FieldOfViewDegrees * 0.5f * Mathf.Deg2Rad);
                 inFieldOfView = Vector3.Dot(forward, direction) >= minimumVisibleDot;

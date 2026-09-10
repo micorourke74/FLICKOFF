@@ -29,6 +29,12 @@ namespace FlickOff.Tests
         }
 
         [Test]
+        public void HeadingZeroFacesUnityForwardOnTheXZGroundPlane()
+        {
+            Assert.That(FlickCameraMath.HeadingToForward(0f), Is.EqualTo(Vector3.forward));
+        }
+
+        [Test]
         public void DefinitionTrimsStableIdAndExposesEyePosition()
         {
             FlickCameraDefinition definition = new FlickCameraDefinition(
@@ -69,11 +75,11 @@ namespace FlickOff.Tests
             FlickVisionSensor sensor = new FlickVisionSensor(new FixedLineOfSight(true));
 
             FlickVisibility inside = sensor.Evaluate(
-                camera, new Vector3(10f, 10f, 100f), FlickTargetKind.PlayerVehicle);
+                camera, new Vector3(10f, 0f, 10f), FlickTargetKind.PlayerVehicle);
             FlickVisibility outside = sensor.Evaluate(
-                camera, new Vector3(18f, 10f, 0f), FlickTargetKind.PlayerVehicle);
+                camera, new Vector3(18f, 0f, 10f), FlickTargetKind.PlayerVehicle);
             FlickVisibility outOfRange = sensor.Evaluate(
-                camera, new Vector3(0f, 45f, 100f), FlickTargetKind.PlayerVehicle);
+                camera, new Vector3(0f, 0f, 45f), FlickTargetKind.PlayerVehicle);
 
             Assert.That(inside.CanSee, Is.True);
             Assert.That(outside.InRange, Is.True);
@@ -89,9 +95,9 @@ namespace FlickOff.Tests
             FlickVisionSensor blockedSensor = new FlickVisionSensor(new FixedLineOfSight(false));
 
             FlickVisibility onFoot = blockedSensor.Evaluate(
-                camera, new Vector3(0f, 10f, 0f), FlickTargetKind.OnFootPlayer);
+                camera, new Vector3(0f, 0f, 10f), FlickTargetKind.OnFootPlayer);
             FlickVisibility blockedVehicle = blockedSensor.Evaluate(
-                camera, new Vector3(0f, 10f, 0f), FlickTargetKind.PlayerVehicle);
+                camera, new Vector3(0f, 0f, 10f), FlickTargetKind.PlayerVehicle);
 
             Assert.That(onFoot.CanSee, Is.False);
             Assert.That(blockedVehicle.InFieldOfView, Is.True);
@@ -141,8 +147,8 @@ namespace FlickOff.Tests
             FlickCameraDefinition definition = new FlickCameraDefinition("camera-01", Vector3.zero, 0f);
             FlickCamera camera = new FlickCamera(definition, new FlickVisionSensor(new FixedLineOfSight(true)));
 
-            FlickCameraTick first = camera.Tick(new Vector3(0f, 10f, 0f), FlickTargetKind.PlayerVehicle, false, 0);
-            FlickCameraTick stable = camera.Tick(new Vector3(0f, 10f, 0f), FlickTargetKind.PlayerVehicle, false, 100);
+            FlickCameraTick first = camera.Tick(new Vector3(0f, 0f, 10f), FlickTargetKind.PlayerVehicle, false, 0);
+            FlickCameraTick stable = camera.Tick(new Vector3(0f, 0f, 10f), FlickTargetKind.PlayerVehicle, false, 100);
 
             Assert.That(first.Visibility.CanSee, Is.True);
             Assert.That(first.Observation.IsNewSighting, Is.True);
