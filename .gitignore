@@ -1,0 +1,54 @@
+# Unity generated data
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Bb]uild/
+[Bb]uilds/
+[Aa]rtifacts/
+MemoryCaptures/
+Recordings/
+UserSettings/
+
+# IDE and editor generated files
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Crash reports and local diagnostics
+sysinfo.txt
+crashreport_*
+*.dmp
+*.stacktrace
+
+# Local Unity and build logs
+*.log
+tools/unity/logs/
+tools/unity/results/
+
+# Temporary donor/reference checkouts
+reference/_external/
+_external/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Generated archives
+*.zip
+*.7z
+*.rar

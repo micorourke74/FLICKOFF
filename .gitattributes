@@ -1,0 +1,36 @@
+# Keep Unity YAML assets reviewable and mergeable.
+*.unity text eol=lf merge=unityyamlmerge diff
+*.prefab text eol=lf merge=unityyamlmerge diff
+*.asset text eol=lf merge=unityyamlmerge diff
+*.mat text eol=lf merge=unityyamlmerge diff
+*.meta text eol=lf merge=unityyamlmerge diff
+*.anim text eol=lf merge=unityyamlmerge diff
+*.controller text eol=lf merge=unityyamlmerge diff
+*.overrideController text eol=lf merge=unityyamlmerge diff
+*.playable text eol=lf merge=unityyamlmerge diff
+*.asmdef text eol=lf diff
+*.cs text eol=lf diff
+*.json text eol=lf diff
+*.md text eol=lf diff
+*.ps1 text eol=lf diff
+
+# Large non-diffable source/game assets belong in Git LFS.
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.tif filter=lfs diff=lfs merge=lfs -text
+*.tiff filter=lfs diff=lfs merge=lfs -text
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# Never apply LFS to Unity YAML assets.
+*.unity -filter -lfs
+*.prefab -filter -lfs
+*.asset -filter -lfs
+*.mat -filter -lfs
+*.meta -filter -lfs
