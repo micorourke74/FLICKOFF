@@ -1,0 +1,20 @@
+{
+  "name": "FlickOff.Tests.PlayMode",
+  "rootNamespace": "FlickOff.Tests",
+  "references": [
+    "FlickOff.Runtime",
+    "UnityEngine.TestRunner"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "testAssemblies": true
+}

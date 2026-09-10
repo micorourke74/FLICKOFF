@@ -1,0 +1,18 @@
+{
+  "name": "FlickOff.Editor",
+  "rootNamespace": "FlickOff.Editor",
+  "references": [
+    "FlickOff.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
