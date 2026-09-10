@@ -1,7 +1,9 @@
 {
   "name": "FlickOff.Runtime",
   "rootNamespace": "FlickOff",
-  "references": [],
+  "references": [
+    "Unity.InputSystem"
+  ],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,

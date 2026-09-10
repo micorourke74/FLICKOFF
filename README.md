@@ -45,4 +45,4 @@ No donor source, GTA assembly, ScriptHook dependency, Rockstar content, or GTA m
 
 ## Current milestone
 
-Foundation complete enough to hand off the next mission: GTALPR camera behavioral parity port. The acceptance gate is [`ACCEPTANCE.md`](ACCEPTANCE.md), and the latest handoff is [`docs/HANDOFF.md`](docs/HANDOFF.md).
+The first playable street test slice is in place: open `Assets/FLICKOFF/Scenes/Labs/StreetTestGround.unity`, use WASD and mouse to drive the test vehicle, and press E while aiming at a FLICK camera to damage it. The deterministic camera core is covered by 19 passing EditMode tests and one passing PlayMode smoke test. The acceptance gate is [`ACCEPTANCE.md`](ACCEPTANCE.md), and the latest handoff is [`docs/HANDOFF.md`](docs/HANDOFF.md).
